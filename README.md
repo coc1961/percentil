@@ -12,7 +12,7 @@ go get -u github.com/coc1961/percentil
 
 ### Ejemplo de uso
 
-> Ejemplo leyendo de stdin
+> Ejemplo leyendo de stdin, percentil 20
 ```sh
 
  cat testdata/testDatosAgrupados1.csv | percentil -f - -p 20
@@ -23,7 +23,7 @@ go get -u github.com/coc1961/percentil
  
 ```
 
-> Ejemplo leyendo desde archivo
+> Ejemplo leyendo desde archivo, percentil 20
 ```sh
 
  percentil -f testdata/testDatosAgrupados1.csv -p 20
