@@ -34,7 +34,7 @@ go get -u github.com/coc1961/percentil
  
 ```
 
-> Ejemplos de tablas de datos (agrupado y no agrupados) ver carpeta testdata
+> Ejemplos de tablas de datos (agrupados y no agrupados) ver carpeta testdata
 
 ```sh
 
