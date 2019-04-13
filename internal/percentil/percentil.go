@@ -38,6 +38,8 @@ func (p *Percentil) Result() float64 {
 
 //SetTable SetTable
 func (p *Percentil) SetTable(data interface{}) *Percentil {
+	p.result = -1
+	p.data = nil
 	p.dataGrouped = false
 	if d, ok := data.([][]float64); ok {
 		sort.Slice(d, func(i, j int) bool {
@@ -116,6 +118,11 @@ func (p *Percentil) calcGrouped(perc int) *Percentil {
 			Ni:     p.data[i][1],
 			NiAcum: acum,
 		}
+	}
+	if len(table) == 0 {
+		p.err = errors.New("Empty Data")
+		p.result = -1
+		return p
 	}
 	Intervalo := float64(0)         // Intervalo de incremento de la columna 0 de la tabla
 	K := perc                       // Percentil
