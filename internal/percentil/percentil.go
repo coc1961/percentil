@@ -99,12 +99,16 @@ func (p *Percentil) calcNoGrouped(perc int) *Percentil {
 		}
 	}
 	N := float64(len(table))
-	result := (N * float64(perc)) / 100
+	result := N * (float64(perc) / 100)
 	if result == float64(int(result)) {
 		p.result = table[int(result-1)].Value
 		return p
 	}
-	p.result = (float64(table[int(result-1)].Value + table[int(result)].Value)) / 2
+	value1 := table[int(result-1)].Value
+	value2 := table[int(result)].Value
+	decimal := (result - float64(int(result)))
+	diff := (value2 - value1) * decimal
+	p.result = math.Round((value1+diff)*100) / 100
 	return p
 }
 

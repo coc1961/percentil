@@ -33,7 +33,7 @@ func TestPercentil_Prueba1(t *testing.T) {
 
 }
 
-func TestPercentil_Cocina(t *testing.T) {
+func TestPercentil_Test1(t *testing.T) {
 	table := [][]float64{
 		{152, 5},
 		{160, 18},
@@ -49,6 +49,27 @@ func TestPercentil_Cocina(t *testing.T) {
 	assert.Equal(t, float64(180.68), p.Calc(80).Result())
 	assert.Equal(t, float64(191.1), p.Calc(99).Result())
 
+}
+
+func TestPercentil_Test2(t *testing.T) {
+	table := []float64{
+		3,
+		6,
+		7,
+		8,
+		8,
+		10,
+		13,
+		15,
+		16,
+		20,
+	}
+	p := Percentil{}
+	p.SetTable(table)
+
+	//assert.Equal(t, float64(14), p.Calc(75).Result())
+	assert.Equal(t, float64(3), p.Calc(1).Result())
+	assert.Equal(t, float64(19.6), p.Calc(99).Result())
 }
 
 func TestPercentil_Decimal1(t *testing.T) {
@@ -145,7 +166,7 @@ func TestPercentil_SimpleColumna(t *testing.T) {
 	}
 	p.SetTable(table)
 
-	assert.Equal(t, float64(7.5), p.Calc(90).Result())
+	assert.Equal(t, float64(7.9), p.Calc(90).Result())
 
 }
 
