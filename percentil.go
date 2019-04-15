@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coc1961/percentil/internal/percentil"
+	"github.com/coc1961/percentil/percentil"
 )
 
 func main() {
