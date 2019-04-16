@@ -10,7 +10,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/coc1961/percentil/percentil"
+	"github.com/coc1961/percentil/calc"
 )
 
 func main() {
@@ -58,7 +58,7 @@ func main() {
 		return
 	}
 
-	per := percentil.New()
+	per := calc.New()
 
 	if len(arr[0]) == 1 {
 		//No Agrupado

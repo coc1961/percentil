@@ -1,4 +1,4 @@
-package percentil
+package calc
 
 import (
 	"testing"
